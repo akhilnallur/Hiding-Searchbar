@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/da58f68fe6.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body class="body" id="container">
+    <div class="heading">Hiding Search Bar</div>
+    <div class="searchbox">
+        <input class="input" type="text" placeholder="Search here...">
+        <button class="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+
+
+
+    <script>
+        let searchbox = document.querySelector('.searchbox');
+        let input = document.querySelector('.input');
+        let button = document.querySelector('.btn');
+        let body = document.getElementById('container');
+        let heading = document.querySelector('.heading');
+
+
+        button.addEventListener('click', () => {
+            searchbox.classList.toggle('active');
+            heading.classList.toggle('active');
+        })
+
+
+        var colors = ["linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)", "linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%)",
+         "linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%)"];
+
+
+        button.addEventListener('click', function () {
+
+            var randomColor = colors[Math.floor(Math.random() * colors.length)]
+
+            body.style.background = randomColor;
+            heading.style.background = randomColor;
+        })
+    </script>
+</body>
+
+</html>
